@@ -50,8 +50,8 @@ public class TouchCars : MonoBehaviour
                     var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out hitInfo))
                     {
-                        if (hitInfo.transform.gameObject.tag == "Car" || hitInfo.transform.gameObject.tag == "FirstCarTutorial")
-                        {            
+                        if (hitInfo.transform.gameObject.tag == "Car" || hitInfo.transform.gameObject.tag == "FirstCarTutorial" || hitInfo.transform.gameObject.tag == "CarRight")
+                        {
                             var carScript = hitInfo.collider.GetComponent<Car>();
                             car = carScript;
 
@@ -62,7 +62,7 @@ public class TouchCars : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0))
             {
-                if (hitInfo.transform.gameObject.tag == "FirstCarTutorial" && firstCarTutorial)
+                if (hitInfo.transform.gameObject.tag == "Car")
                 {
                     x2 = Input.mousePosition.x;
                     if (x1 > x2)
@@ -74,18 +74,17 @@ public class TouchCars : MonoBehaviour
                     {
                         car.carCanDriveBackward = true;
                         alreadyClicked = true;
-                        firstCarTutorial = false;
                     }
                 }
-                else if (hitInfo.transform.gameObject.tag == "Car" && !firstCarTutorial)
+                else if (hitInfo.transform.gameObject.tag == "CarRight")
                 {
                     x2 = Input.mousePosition.x;
-                    if (x1 > x2)
+                    if (x1 < x2)
                     {
                         car.carCanDrive = true;
                         alreadyClicked = true;
                     }
-                    else if (x1 < x2)
+                    else if (x1 > x2)
                     {
                         car.carCanDriveBackward = true;
                         alreadyClicked = true;

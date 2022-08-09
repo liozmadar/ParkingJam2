@@ -21,19 +21,20 @@ public class Car : MonoBehaviour
     public ParticleSystem carhitSparkBack;
 
     public Animator anim;
-    private MeshCollider meshCollider;
 
     public GameObject exclamation;
     private bool exclamationBool;
     private bool exclamationTheCollisionCar = true;
     private float exclamationTimer = 1;
 
+    public CarGoHomePath carGoHomePath;
+
     // Start is called before the first frame update
     void Start()
     {
         carhitSparkFront = GetComponentInChildren<ParticleSystem>(carhitSparkFront);
         anim = GetComponent<Animator>();
-        meshCollider = GetComponent<MeshCollider>();
+        carGoHomePath = GetComponent<CarGoHomePath>();
     }
     // Update is called once per frame
     void Update()
@@ -95,14 +96,14 @@ public class Car : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Car" || collision.gameObject.tag == "FirstCarTutorial" || collision.gameObject.tag == "ParkingObjects")
+        if (collision.gameObject.tag == "Car" || collision.gameObject.tag == "CarRight" || collision.gameObject.tag == "ParkingObjects")
         {
             if (carCanDrive == true)
             {
                 carCanDrive = false;
                 CarHitObjectFromFront = true;
                 touchCars.cantTouchTheCar = true;
-                Invoke("CarHitObjectFromFrontStop", 0.05f);
+                Invoke("CarHitObjectFromFrontStop", 0.03f);
                 carhitSparkFront.Play(true);
             }
             else if (carCanDriveBackward == true)
@@ -110,7 +111,7 @@ public class Car : MonoBehaviour
                 carCanDriveBackward = false;
                 CarHitObjectFromBack = true;
                 touchCars.cantTouchTheCar = true;
-                Invoke("CarHitObjectFromBackStop", 0.05f);
+                Invoke("CarHitObjectFromBackStop", 0.03f);
                 carhitSparkBack.Play(true);
             }
             touchCars.alreadyClicked = false;
@@ -119,11 +120,11 @@ public class Car : MonoBehaviour
             {
                 exclamationBool = true;
             }
-            else if(!exclamationTheCollisionCar)
+            else if (!exclamationTheCollisionCar)
             {
                 exclamationTheCollisionCar = true;
             }
-        }
+        }     
     }
     void CarHitObjectFromFrontStop()
     {

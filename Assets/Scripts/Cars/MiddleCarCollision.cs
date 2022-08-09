@@ -25,13 +25,14 @@ public class MiddleCarCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "NavMeshRoad")
         {
-            car.carCanNowGoToHomePoint = true;
             car.touchCars.alreadyClicked = false;
             car.touchCars.cantTouchTheCar = true;
             touchCars.firstCarTutorial = false;
+            car.carCanDrive = false;
 
             car.anim.enabled = false;
             mouseTutorial.SetActive(false);
+            car.carGoHomePath.enabled = true;
         }
         if (other.gameObject.tag == "FinishLine")
         {
