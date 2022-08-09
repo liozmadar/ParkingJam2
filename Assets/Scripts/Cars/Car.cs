@@ -38,8 +38,6 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CarsGoHome();
-
         MoveCarForward();
         MoveCarBackward();
 
@@ -72,16 +70,9 @@ public class Car : MonoBehaviour
             touchCars.hitInfo.transform.position += transform.forward * touchCars.speed * Time.deltaTime;
         }
     }
-    void CarsGoHome()
-    {
-        if (carCanNowGoToHomePoint)
-        {
-            meshCollider.enabled = false;
-        }
-    }
     void MoveCarForward()
     {
-        if (carCanDrive && !carCanNowGoToHomePoint)
+        if (carCanDrive)
         {
 
             touchCars.hitInfo.transform.position += transform.forward * touchCars.speed * Time.deltaTime;
@@ -93,7 +84,7 @@ public class Car : MonoBehaviour
     }
     void MoveCarBackward()
     {
-        if (carCanDriveBackward && !carCanNowGoToHomePoint)
+        if (carCanDriveBackward)
         {
             touchCars.hitInfo.transform.position -= transform.forward * touchCars.speed * Time.deltaTime;
             touchCars.cantTouchTheCar = false;
