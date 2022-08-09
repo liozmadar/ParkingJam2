@@ -25,7 +25,6 @@ public class MiddleCarCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "NavMeshRoad")
         {
-            car.agent.enabled = true;
             car.carCanNowGoToHomePoint = true;
             car.touchCars.alreadyClicked = false;
             car.touchCars.cantTouchTheCar = true;

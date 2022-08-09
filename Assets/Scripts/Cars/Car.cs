@@ -8,7 +8,6 @@ public class Car : MonoBehaviour
 {
     public TouchCars touchCars;
 
-    public NavMeshAgent agent;
     public bool carCanNowGoToHomePoint;
     public GameObject carsGoHomePoint;
 
@@ -77,7 +76,6 @@ public class Car : MonoBehaviour
     {
         if (carCanNowGoToHomePoint)
         {
-            agent.SetDestination(carsGoHomePoint.gameObject.transform.position);
             meshCollider.enabled = false;
         }
     }
