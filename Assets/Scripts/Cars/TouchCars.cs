@@ -72,8 +72,11 @@ public class TouchCars : MonoBehaviour
                     }
                     else if (x1 < x2)
                     {
+                        if (car.carCanDriveBackward != null)
+                        {
                         car.carCanDriveBackward = true;
                         alreadyClicked = true;
+                        }
                     }
                 }
                 else if (hitInfo.transform.gameObject.tag == "Car" && !firstCarTutorial)
