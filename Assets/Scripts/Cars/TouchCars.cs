@@ -62,7 +62,7 @@ public class TouchCars : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0))
             {
-                if (hitInfo.transform.gameObject.tag == "Car")
+                if (hitInfo.transform.gameObject.tag == "FirstCarTutorial" && firstCarTutorial)
                 {
                     x2 = Input.mousePosition.x;
                     if (x1 > x2)
@@ -76,7 +76,21 @@ public class TouchCars : MonoBehaviour
                         alreadyClicked = true;
                     }
                 }
-                else if (hitInfo.transform.gameObject.tag == "CarRight")
+                else if (hitInfo.transform.gameObject.tag == "Car" && !firstCarTutorial)
+                {
+                    x2 = Input.mousePosition.x;
+                    if (x1 > x2)
+                    {
+                        car.carCanDrive = true;
+                        alreadyClicked = true;
+                    }
+                    else if (x1 < x2)
+                    {
+                        car.carCanDriveBackward = true;
+                        alreadyClicked = true;
+                    }
+                }
+                else if (hitInfo.transform.gameObject.tag == "CarRight" && !firstCarTutorial)
                 {
                     x2 = Input.mousePosition.x;
                     if (x1 < x2)

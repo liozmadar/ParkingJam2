@@ -25,9 +25,15 @@ public class Car : MonoBehaviour
     public GameObject exclamation;
     private bool exclamationBool;
     private bool exclamationTheCollisionCar = true;
-    private float exclamationTimer = 1;
+    private float exclamationTimer = 0.5f;
 
     public CarGoHomePath carGoHomePath;
+
+    public Sprite emote1;
+    public Sprite emote2;
+    public Sprite emote3;
+
+    public SpriteRenderer SP;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +58,7 @@ public class Car : MonoBehaviour
             if (exclamationTimer < 0)
             {
                 exclamationBool = false;
-                exclamationTimer = 1;
+                exclamationTimer = 0.5f;
                 exclamation.SetActive(false);
             }
         }
@@ -96,7 +102,7 @@ public class Car : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Car" || collision.gameObject.tag == "CarRight" || collision.gameObject.tag == "ParkingObjects")
+        if (collision.gameObject.tag == "Car" || collision.gameObject.tag == "CarRight" || collision.gameObject.tag == "FirstCarTutorial" || collision.gameObject.tag == "ParkingObjects")
         {
             if (carCanDrive == true)
             {
@@ -119,6 +125,20 @@ public class Car : MonoBehaviour
             if (exclamationTheCollisionCar)
             {
                 exclamationBool = true;
+                float random = Random.Range(1, 4);
+                if (random == 1)
+                {
+                    SP.sprite = emote1;
+                }
+                if (random == 2)
+                {
+                    SP.sprite = emote2;
+                }
+                if (random == 3)
+                {
+                    SP.sprite = emote3;
+                }
+                Debug.Log(random);
             }
             else if (!exclamationTheCollisionCar)
             {

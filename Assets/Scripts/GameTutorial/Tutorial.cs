@@ -48,8 +48,8 @@ public class Tutorial : MonoBehaviour
     void MouseSpriteMove()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = clickedMouse;
-        gameObject.transform.position += transform.right * speed * Time.deltaTime;
-        gameObject.transform.position -= transform.up * speed * Time.deltaTime;
+        gameObject.transform.position -= transform.right * speed * Time.deltaTime;
+        gameObject.transform.position += transform.up * speed * Time.deltaTime;
     }
     void RepeatToMouseSpriteMove()
     {

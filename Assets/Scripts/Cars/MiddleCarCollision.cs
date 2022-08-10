@@ -6,6 +6,7 @@ public class MiddleCarCollision : MonoBehaviour
 {
     public Car car;
     public TouchCars touchCars;
+
     public GameObject mouseTutorial;
 
     // Start is called before the first frame update
@@ -13,7 +14,6 @@ public class MiddleCarCollision : MonoBehaviour
     {
         car = GetComponentInParent<Car>();
         touchCars = GameObject.Find("GameCarsManager").GetComponent<TouchCars>();
-        mouseTutorial = GameObject.Find("MouseTutorial");
     }
 
     // Update is called once per frame
@@ -31,8 +31,12 @@ public class MiddleCarCollision : MonoBehaviour
             car.carCanDrive = false;
 
             car.anim.enabled = false;
+            if (mouseTutorial != null)
+            {
             mouseTutorial.SetActive(false);
+            }
             car.carGoHomePath.enabled = true;
+            touchCars.firstCarTutorial = false;
         }
         if (other.gameObject.tag == "FinishLine")
         {
