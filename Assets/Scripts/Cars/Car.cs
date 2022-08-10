@@ -138,7 +138,6 @@ public class Car : MonoBehaviour
                 {
                     SP.sprite = emote3;
                 }
-                Debug.Log(random);
             }
             else if (!exclamationTheCollisionCar)
             {
