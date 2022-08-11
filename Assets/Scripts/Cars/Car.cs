@@ -7,33 +7,31 @@ using UnityEngine.Animations;
 public class Car : MonoBehaviour
 {
     public TouchCars touchCars;
-
-    public bool carCanNowGoToHomePoint;
+    public Animator anim;
+    //car car go home
+    public CarGoHomePath carGoHomePath;
     public GameObject carsGoHomePoint;
-
+    public bool carCanNowGoToHomePoint;
+    //check the car hits
     private bool CarHitObjectFromFront;
     private bool CarHitObjectFromBack;
-
+    //allow the car to move
     public bool carCanDrive;
     public bool carCanDriveBackward;
-
+    //partical system from getting hit
     private ParticleSystem carhitSparkFront;
     public ParticleSystem carhitSparkBack;
-
-    public Animator anim;
-
+    //emote 
     public GameObject exclamation;
     private bool exclamationBool;
     private bool exclamationTheCollisionCar = true;
     private float exclamationTimer = 0.5f;
-
-    public CarGoHomePath carGoHomePath;
-
+    //emote display
+    public SpriteRenderer SP;
     public Sprite emote1;
     public Sprite emote2;
     public Sprite emote3;
 
-    public SpriteRenderer SP;
 
     // Start is called before the first frame update
     void Start()

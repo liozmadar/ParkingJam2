@@ -37,6 +37,8 @@ public class MiddleCarCollision : MonoBehaviour
             }
             car.carGoHomePath.enabled = true;
             touchCars.firstCarTutorial = false;
+            //untagged because if i click on one car and then release on another car , cause a bug . (because the cars not in the same tag)
+            car.gameObject.tag = "Untagged";
         }
         if (other.gameObject.tag == "FinishLine")
         {

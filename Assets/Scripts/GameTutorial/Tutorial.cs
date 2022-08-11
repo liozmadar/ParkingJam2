@@ -7,9 +7,9 @@ public class Tutorial : MonoBehaviour
     public Sprite clickedMouse;
     public Sprite UnClickedMouse;
 
-    public float speed;
     private Vector3 FirstMouseSpritePos;
-
+    public float speed;
+    //hand finger tutorial movment
     private bool stopMouse = true;
     private float timer1 = 1;
     private float timer2 = 2;

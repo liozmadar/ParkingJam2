@@ -14,19 +14,19 @@ public class TouchCars : MonoBehaviour
     public bool alreadyClicked;
     //Cars speed
     public float speed;
-    //Array of all the cars
+    //Array of all the cars and finish line
     public GameObject[] carsFinished;
     public int howManyCarsFinished;
-
+    public GameObject canvasFinishGame;
+    public TextMeshProUGUI finishText;
+    private bool stopFinishTextSize = true;
+    //mouse input position
     private float x1;
     private float x2;
 
     public bool cantTouchTheCar = true;
     public bool firstCarTutorial = true;
 
-    public GameObject canvasFinishGame;
-    public TextMeshProUGUI finishText;
-    private bool stopFinishTextSize = true;
 
     // Start is called before the first frame update
     void Start()
@@ -72,11 +72,9 @@ public class TouchCars : MonoBehaviour
                     }
                     else if (x1 < x2)
                     {
-                        if (car.carCanDriveBackward != null)
-                        {
                         car.carCanDriveBackward = true;
                         alreadyClicked = true;
-                        }
+
                     }
                 }
                 else if (hitInfo.transform.gameObject.tag == "Car" && !firstCarTutorial)
