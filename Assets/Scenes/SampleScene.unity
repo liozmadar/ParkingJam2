@@ -264,8 +264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 457.4094, y: 251.96042}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 457.4094, y: 222.6}
+  m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25882129
 MonoBehaviour:
@@ -2849,7 +2849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 457.4094, y: 351.96042}
+  m_AnchoredPosition: {x: 457.4094, y: 346.1}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370200072
@@ -2872,7 +2872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Congratulations!
+  m_text: Good Job!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2899,8 +2899,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4100,18 +4100,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchCars: {fileID: 506506796}
-  carCanNowGoToHomePoint: 0
+  anim: {fileID: 0}
+  carGoHomePath: {fileID: 0}
   carsGoHomePoint: {fileID: 996446899}
+  carCanNowGoToHomePoint: 0
   carCanDrive: 0
   carCanDriveBackward: 0
   carhitSparkBack: {fileID: 2065064831}
-  anim: {fileID: 0}
   exclamation: {fileID: 627751700}
-  carGoHomePath: {fileID: 0}
+  SP: {fileID: 627751702}
   emote1: {fileID: 21300000, guid: 5b61e810929179240be5769d06c552d9, type: 3}
   emote2: {fileID: 21300000, guid: d2a6659485b989147b60ecf3384201fd, type: 3}
   emote3: {fileID: 21300000, guid: 1562029f870c2cf488f7fc9366b54b62, type: 3}
-  SP: {fileID: 627751702}
 --- !u!23 &460395800
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4844,10 +4844,10 @@ MonoBehaviour:
   - {fileID: 460395797}
   - {fileID: 1869160282}
   howManyCarsFinished: 0
-  cantTouchTheCar: 1
-  firstCarTutorial: 1
   canvasFinishGame: {fileID: 1523239157}
   finishText: {fileID: 370200072}
+  cantTouchTheCar: 1
+  firstCarTutorial: 1
 --- !u!4 &506506797
 Transform:
   m_ObjectHideFlags: 0
@@ -5560,7 +5560,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 457.4094, y: 281.96042}
-  m_SizeDelta: {x: 2000, y: 1000}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &629772271
 MonoBehaviour:
@@ -5575,14 +5575,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2d7d34242bb238342b5090606321941d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8622,13 +8622,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -15280,18 +15280,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchCars: {fileID: 506506796}
-  carCanNowGoToHomePoint: 0
+  anim: {fileID: 0}
+  carGoHomePath: {fileID: 0}
   carsGoHomePoint: {fileID: 996446899}
+  carCanNowGoToHomePoint: 0
   carCanDrive: 0
   carCanDriveBackward: 0
   carhitSparkBack: {fileID: 115167913}
-  anim: {fileID: 0}
   exclamation: {fileID: 903550094}
-  carGoHomePath: {fileID: 0}
+  SP: {fileID: 903550096}
   emote1: {fileID: 21300000, guid: 5b61e810929179240be5769d06c552d9, type: 3}
   emote2: {fileID: 21300000, guid: d2a6659485b989147b60ecf3384201fd, type: 3}
   emote3: {fileID: 21300000, guid: 1562029f870c2cf488f7fc9366b54b62, type: 3}
-  SP: {fileID: 903550096}
 --- !u!114 &1869160289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16216,18 +16216,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchCars: {fileID: 506506796}
-  carCanNowGoToHomePoint: 0
+  anim: {fileID: 0}
+  carGoHomePath: {fileID: 0}
   carsGoHomePoint: {fileID: 996446899}
+  carCanNowGoToHomePoint: 0
   carCanDrive: 0
   carCanDriveBackward: 0
   carhitSparkBack: {fileID: 711370573}
-  anim: {fileID: 0}
   exclamation: {fileID: 2119511197}
-  carGoHomePath: {fileID: 0}
+  SP: {fileID: 2119511199}
   emote1: {fileID: 21300000, guid: 5b61e810929179240be5769d06c552d9, type: 3}
   emote2: {fileID: 21300000, guid: d2a6659485b989147b60ecf3384201fd, type: 3}
   emote3: {fileID: 21300000, guid: 1562029f870c2cf488f7fc9366b54b62, type: 3}
-  SP: {fileID: 2119511199}
 --- !u!95 &1938708192
 Animator:
   serializedVersion: 4
